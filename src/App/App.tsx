@@ -1,10 +1,10 @@
 import React from 'react'
-import { Test } from '@components/Test'
+import { Toast } from '@components/Toast'
 
 export const App = () => {
 	return (
 		<div>
-			<Test />
+			<Toast />
 		</div>
 	)
 }

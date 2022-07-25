@@ -19,5 +19,5 @@
     "noImplicitAny": false,
     "types": ["cypress"]
   },
-  "include": ["src", "declaration.d.ts"]
+  "include": ["src", "declaration.d.ts", "styled.d.ts"]
 }
