@@ -1,27 +1,52 @@
 import HelveticaNeue from '@assets/fonts/HelveticaNeue.ttf'
-import styled from 'styled-components/macro'
-import { font } from '@styles/theme'
+import styled, { keyframes } from 'styled-components/macro'
+import {
+	font,
+	fromBottom,
+	fromLeft,
+	fromRight,
+	fromTop,
+	leftBottom,
+	leftTop,
+	rightBottom,
+	rightTop,
+} from '@styles/theme'
 import error from '@assets/svg/error.svg'
 import info from '@assets/svg/info.svg'
 import success from '@assets/svg/success.svg'
 import warning from '@assets/svg/warning.svg'
 import closeWhite from '@assets/svg/closeWhite.svg'
 import closeBlack from '@assets/svg/closeBlack.svg'
-import { ERROR, INFO, WARNING } from '@constants/constants'
+import {
+	ERROR,
+	FROM_BOTTOM,
+	FROM_LEFT,
+	FROM_RIGHT,
+	FROM_TOP,
+	INFO,
+	LEFT_BOTTOM,
+	LEFT_TOP,
+	RIGHT_TOP,
+	WARNING,
+} from '@constants/constants'
 
 interface IProps {
 	type: string
 }
 
-export const ToastContainer = styled.div<IProps>`
+interface IToastContainer extends IProps {
+	position: string
+	animation: string
+}
+
+export const ToastContainer = styled.div<IToastContainer>`
 	@font-face {
 		font-family: 'Helvetica Neue';
 		src: url(${HelveticaNeue}) format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
-	position: relative;
-	${font}
+	position: fixed;
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -30,6 +55,21 @@ export const ToastContainer = styled.div<IProps>`
 	border-radius: 24px;
 	box-shadow: 4px 4px 8px #00000029;
 	opacity: 1;
+	padding: 32px;
+	transition: transform 1s ease-in;
+	${font}
+	${(props) => {
+		switch (props.position) {
+			case LEFT_TOP:
+				return leftTop
+			case LEFT_BOTTOM:
+				return leftBottom
+			case RIGHT_TOP:
+				return rightTop
+			default:
+				return rightBottom
+		}
+	}}
 	background: ${(props) => {
 		switch (props.type) {
 			case INFO:
@@ -42,7 +82,23 @@ export const ToastContainer = styled.div<IProps>`
 				return props.theme.type.success
 		}
 	}};
-	padding: 32px;
+	animation: ${(props) => {
+			switch (props.animation) {
+				case FROM_LEFT:
+					return FROM_LEFT
+				case FROM_TOP:
+					return FROM_TOP
+				case FROM_RIGHT:
+					return FROM_RIGHT
+				default:
+					return FROM_BOTTOM
+			}
+		}}
+		1s;
+	${fromLeft};
+	${fromTop};
+	${fromRight};
+	${fromBottom};
 `
 
 export const Logo = styled.div<IProps>`
