@@ -35,21 +35,20 @@ interface IProps {
 }
 
 interface IToastContainer extends IProps {
-	position: string
 	animation: string
 }
 
-export const ToastContainer = styled.div<IToastContainer>`
+export const ToastWrapper = styled.div<IToastContainer>`
 	@font-face {
 		font-family: 'Helvetica Neue';
 		src: url(${HelveticaNeue}) format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
-	position: fixed;
+	position: relative;
 	display: flex;
-	justify-content: flex-start;
 	align-items: center;
+	margin-bottom: 10px;
 	width: 668px;
 	height: 181px;
 	border-radius: 24px;
@@ -58,18 +57,7 @@ export const ToastContainer = styled.div<IToastContainer>`
 	padding: 32px;
 	transition: transform 1s ease-in;
 	${font}
-	${(props) => {
-		switch (props.position) {
-			case LEFT_TOP:
-				return leftTop
-			case LEFT_BOTTOM:
-				return leftBottom
-			case RIGHT_TOP:
-				return rightTop
-			default:
-				return rightBottom
-		}
-	}}
+
 	background: ${(props) => {
 		switch (props.type) {
 			case INFO:

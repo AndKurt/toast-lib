@@ -15,29 +15,34 @@ import { defaultTheme } from '@styles/theme'
 import { ThemeProvider } from 'styled-components'
 import {
 	CloseBtn,
-	ToastContainer,
 	Logo,
 	TextHelper,
 	Title,
 	Description,
+	ToastWrapper,
 } from './components'
 import { ErrorBoundary } from '@components/ErrorBoundary'
+import { IToast } from '@interfaces/forToast'
 
-export const Toast = () => {
+export const Toast = ({
+	id,
+	type,
+	title,
+	description,
+	animation,
+	handleDeleteToast,
+}: IToast) => {
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<ErrorBoundary>
-				<ToastContainer
-					type={SUCCSESS}
-					position={RIGHT_BOTTOM}
-					animation={FROM_BOTTOM}>
-					<Logo type={SUCCSESS} />
-					<TextHelper type={SUCCSESS}>
-						<Title>Title</Title>
-						<Description>Description</Description>
+				<ToastWrapper type={type} animation={animation}>
+					<Logo type={type} />
+					<TextHelper type={type}>
+						<Title>{title}</Title>
+						<Description>{description}</Description>
 					</TextHelper>
-					<CloseBtn type={SUCCSESS} />
-				</ToastContainer>
+					<CloseBtn type={type} onClick={() => handleDeleteToast!(id)} />
+				</ToastWrapper>
 			</ErrorBoundary>
 		</ThemeProvider>
 	)
