@@ -10,6 +10,10 @@ import {
 	leftTop,
 	rightBottom,
 	rightTop,
+	toBottom,
+	toLeft,
+	toRight,
+	toTop,
 } from '@styles/theme'
 import error from '@assets/svg/error.svg'
 import info from '@assets/svg/info.svg'
@@ -18,6 +22,7 @@ import warning from '@assets/svg/warning.svg'
 import closeWhite from '@assets/svg/closeWhite.svg'
 import closeBlack from '@assets/svg/closeBlack.svg'
 import {
+	DEFAULT_ANIM_DELAY,
 	ERROR,
 	FROM_BOTTOM,
 	FROM_LEFT,
@@ -26,6 +31,7 @@ import {
 	INFO,
 	LEFT_BOTTOM,
 	LEFT_TOP,
+	RIGHT_BOTTOM,
 	RIGHT_TOP,
 	WARNING,
 } from '@constants/constants'
@@ -35,7 +41,8 @@ interface IProps {
 }
 
 interface IToastContainer extends IProps {
-	animation: string
+	animation?: string
+	position: string
 }
 
 export const ToastWrapper = styled.div<IToastContainer>`
@@ -55,7 +62,9 @@ export const ToastWrapper = styled.div<IToastContainer>`
 	box-shadow: 4px 4px 8px #00000029;
 	opacity: 1;
 	padding: 32px;
-	transition: transform 1s ease-in;
+	transition: transform ${DEFAULT_ANIM_DELAY}ms ease-in;
+	cursor: grab;
+
 	${font}
 
 	background: ${(props) => {
@@ -70,23 +79,15 @@ export const ToastWrapper = styled.div<IToastContainer>`
 				return props.theme.type.success
 		}
 	}};
-	animation: ${(props) => {
-			switch (props.animation) {
-				case FROM_LEFT:
-					return FROM_LEFT
-				case FROM_TOP:
-					return FROM_TOP
-				case FROM_RIGHT:
-					return FROM_RIGHT
-				default:
-					return FROM_BOTTOM
-			}
-		}}
-		1s;
+	animation: ${({ animation }) => animation} 1s;
 	${fromLeft};
+	${toLeft};
 	${fromTop};
+	${toTop};
 	${fromRight};
+	${toRight};
 	${fromBottom};
+	${toBottom};
 `
 
 export const Logo = styled.div<IProps>`

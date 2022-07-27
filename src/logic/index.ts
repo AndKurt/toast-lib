@@ -1,1 +1,1 @@
-export * from './ToastClass'
+export * from './ToastManager'

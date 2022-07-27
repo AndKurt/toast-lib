@@ -15,3 +15,11 @@ export const FROM_LEFT = 'from-left'
 export const FROM_TOP = 'from-top'
 export const FROM_RIGHT = 'from-right'
 export const FROM_BOTTOM = 'from-bottom'
+export const TO_LEFT = 'to-left'
+export const TO_TOP = 'to-top'
+export const TO_RIGHT = 'to-right'
+export const TO_BOTTOM = 'to-bottom'
+
+//Delay
+export const DEFAULT_ANIM_DELAY = 1000
+export const DEFAULT_DELAY = 3000

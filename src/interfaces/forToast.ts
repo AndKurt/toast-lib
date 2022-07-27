@@ -2,14 +2,19 @@ export interface IToast {
 	id: string
 	type: string
 	title: string
-	description: string
-	animation: string
-	handleDeleteToast?: (id: string) => void
+	description?: string
+	//animation?: string
+	autoDelete?: boolean
+	delayForDelete?: number
 }
 
 export interface IToastContainerProps {
-	toastsList: IToast[]
-	position: string
-	autoRemove: boolean
-	delayToRemove: number
+	position?: string
+	animation?: string
 }
+
+export interface IRefForceUpdate {
+	handleForceUpdate: () => void
+}
+
+export interface ICreateToast extends Required<IToastContainerProps>, IToast {}

@@ -28,6 +28,7 @@ export const rightBottom = css`
 `
 
 // Animtion
+// ---------LEFT-----------
 export const fromLeft = css`
 	@keyframes from-left {
 		from {
@@ -38,18 +39,39 @@ export const fromLeft = css`
 		}
 	}
 `
-
+export const toLeft = css`
+	@keyframes to-left {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(-100%);
+		}
+	}
+`
+//  ---------TOP-----------
 export const fromTop = css`
 	@keyframes from-top {
 		from {
-			transform: translateY(-100%);
+			transform: translateY(-320%);
 		}
 		to {
 			transform: translateY(0);
 		}
 	}
 `
+export const toTop = css`
+	@keyframes to-top {
+		from {
+			transform: translateY(0);
+		}
+		to {
+			transform: translateY(-320%);
+		}
+	}
+`
 
+//  ---------RIGHT-----------
 export const fromRight = css`
 	@keyframes from-right {
 		from {
@@ -60,14 +82,34 @@ export const fromRight = css`
 		}
 	}
 `
-
+export const toRight = css`
+	@keyframes to-right {
+		from {
+			transform: translateX(0);
+		}
+		to {
+			transform: translateX(100%);
+		}
+	}
+`
+//  ---------BOTTOM-----------
 export const fromBottom = css`
 	@keyframes from-bottom {
 		from {
-			transform: translateY(100%);
+			transform: translateY(320%);
 		}
 		to {
 			transform: translateY(0);
+		}
+	}
+`
+export const toBottom = css`
+	@keyframes to-bottom {
+		from {
+			transform: translateY(0);
+		}
+		to {
+			transform: translateY(320%);
 		}
 	}
 `

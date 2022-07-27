@@ -1,25 +1,31 @@
-import React from 'react'
-import { Portal } from '@components/Portal'
+import React, { useEffect, useRef } from 'react'
 import { ToastContainer } from '@components/ToastContainer'
-import { LEFT_TOP } from '@constants/constants'
+import { instanceToast } from '@logic/ToastManager'
+import { IRefForceUpdate, IToastContainerProps } from '@interfaces/forToast'
+import {
+	FROM_BOTTOM,
+	FROM_RIGHT,
+	FROM_TOP,
+	LEFT_BOTTOM,
+	LEFT_TOP,
+	RIGHT_BOTTOM,
+	RIGHT_TOP,
+} from '@constants/constants'
 import { toastsList } from '@mock/toasts'
-import { ToastClass } from '@logic/ToastClass'
 
-export const App = () => {
-	const test = ToastClass.getInstance(toastsList)
+export const App = (props: IToastContainerProps) => {
+	const toastsRef = useRef<IRefForceUpdate>()
 
-	console.log(test)
+	useEffect(() => {
+		if (toastsRef.current) {
+			instanceToast.init(toastsRef.current)
+		}
+	}, [])
 
 	return (
-		<div>
-			<Portal>
-				<ToastContainer
-					toastsList={toastsList}
-					position={LEFT_TOP}
-					autoRemove={false}
-					delayToRemove={3000}
-				/>
-			</Portal>
-		</div>
+		<>
+			<button onClick={() => instanceToast.addToast(toastsList[0])}>add</button>
+			<ToastContainer ref={toastsRef} {...props} />
+		</>
 	)
 }
