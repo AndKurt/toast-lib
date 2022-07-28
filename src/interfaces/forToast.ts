@@ -1,9 +1,10 @@
+import { INFO } from '@constants/constants'
+
 export interface IToast {
 	id: string
 	type: string
 	title: string
 	description?: string
-	//animation?: string
 	autoDelete?: boolean
 	delayForDelete?: number
 }

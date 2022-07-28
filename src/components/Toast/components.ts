@@ -64,6 +64,7 @@ export const ToastWrapper = styled.div<IToastContainer>`
 	padding: 32px;
 	transition: transform ${DEFAULT_ANIM_DELAY}ms ease-in;
 	cursor: grab;
+	user-select: none;
 
 	${font}
 

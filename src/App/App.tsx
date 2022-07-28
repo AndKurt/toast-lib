@@ -24,7 +24,16 @@ export const App = (props: IToastContainerProps) => {
 
 	return (
 		<>
-			<button onClick={() => instanceToast.addToast(toastsList[0])}>add</button>
+			<button
+				onClick={() =>
+					instanceToast.generateToast({
+						title: 'Hey',
+						type: 'error',
+						autoDelete: true,
+					})
+				}>
+				add
+			</button>
 			<ToastContainer ref={toastsRef} {...props} />
 		</>
 	)

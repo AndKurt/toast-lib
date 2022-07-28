@@ -16,4 +16,12 @@ module.exports = {
 			'@interfaces': path.resolve(__dirname, 'src/interfaces/'),
 		},
 	},
+	addons: [
+		{
+			name: 'storybook-preset-craco',
+			options: {
+				cracoConfigFile: '../craco.config.js',
+			},
+		},
+	],
 }

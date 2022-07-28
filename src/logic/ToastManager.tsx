@@ -46,12 +46,13 @@ export class ToastManager {
 		return setTimeout(() => this.deleteToast(id), delayForDelete)
 	}
 
-	//todo: add interface!
-	generateToast = (props) => {
-		return {
+	generateToast = (props: Omit<IToast, 'id'>): void => {
+		const generatedToast: IToast = {
 			id: uuid(),
 			...props,
 		}
+
+		this.addToast(generatedToast)
 	}
 }
 
