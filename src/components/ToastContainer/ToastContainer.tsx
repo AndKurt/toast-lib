@@ -1,7 +1,7 @@
 import React, { forwardRef, useImperativeHandle, useState } from 'react'
 import { ContainerForToasts } from './components'
 import { Toast } from '@components/Toast/Toast'
-import { IToastContainerProps } from '@interfaces/forToast'
+import { IToastContainerProps, TAnimation } from '@interfaces/forToast'
 import { instanceToast } from '@logic/ToastManager'
 import { Portal } from '@components/Portal'
 import { ErrorBoundary } from '@components/ErrorBoundary'
@@ -15,7 +15,7 @@ import {
 export const ToastContainer = forwardRef((props: IToastContainerProps, ref) => {
 	const listOfToasts = instanceToast.getAllToasts()
 	const settedPosition = props.position ? props.position : LEFT_TOP
-	let settedAnimation: string
+	let settedAnimation: TAnimation
 	if (settedPosition === LEFT_TOP || settedPosition === LEFT_BOTTOM) {
 		settedAnimation = props.animation ? props.animation : FROM_LEFT
 	} else {

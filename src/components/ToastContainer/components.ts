@@ -9,6 +9,7 @@ interface IContainerForToasts {
 export const ContainerForToasts = styled.div<IContainerForToasts>`
 	display: flex;
 	flex-direction: column;
+	margin-top: 20px;
 	position: fixed;
 	z-index: 100;
 	${(props) => {

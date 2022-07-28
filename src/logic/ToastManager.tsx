@@ -9,7 +9,8 @@ export class ToastManager {
 	refForceUpdate: IRefForceUpdate
 
 	private constructor() {
-		this.toastsList = toastsList //todo change to []
+		//this.toastsList = [toastsList] //todo change to []
+		this.toastsList = []
 		this.refForceUpdate = { handleForceUpdate() {} }
 	}
 

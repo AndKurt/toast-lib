@@ -1,3 +1,4 @@
+import { TAnimation } from '@/interfaces'
 import {
 	FROM_BOTTOM,
 	FROM_LEFT,
@@ -9,7 +10,7 @@ import {
 	TO_TOP,
 } from '@constants/constants'
 
-export const changeAnimation = (currentAnimation: string): string => {
+export const changeAnimation = (currentAnimation: TAnimation): TAnimation => {
 	switch (currentAnimation) {
 		case FROM_LEFT:
 			return TO_LEFT

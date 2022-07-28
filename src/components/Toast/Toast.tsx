@@ -9,7 +9,7 @@ import {
 	Description,
 	ToastWrapper,
 } from './components'
-import { ICreateToast } from '@interfaces/forToast'
+import { ICreateToast, TAnimation } from '@interfaces/forToast'
 import { instanceToast } from '@logic/ToastManager'
 import {
 	DEFAULT_ANIM_DELAY,
@@ -36,14 +36,14 @@ export const Toast = ({
 	delayForDelete = DEFAULT_DELAY,
 	position,
 }: ICreateToast) => {
-	const [anim, setAnim] = useState(animation)
+	const [anim, setAnim] = useState<TAnimation>(animation)
 	let positionX: number
 	let positionY: number
 
 	useEffect(() => {
 		if (autoDelete) {
 			const idAutoDelete = instanceToast.deleteToastWithDelay(
-				id,
+				id as string,
 				delayForDelete
 			)
 			const changeAnimId = setTimeout(
@@ -60,7 +60,7 @@ export const Toast = ({
 	const handleDeleteToast = () => {
 		setAnim(changeAnimation(anim))
 		setTimeout(() => {
-			instanceToast.deleteToast(id)
+			instanceToast.deleteToast(id as string)
 		}, DEFAULT_ANIM_DELAY)
 	}
 
