@@ -28,7 +28,7 @@
 	},
 	"scripts": {
 		"start": "craco start",
-		"build": "craco build",
+		"build": "rollup -c",
 		"eject": "react-scripts eject",
 		"cypress:start:app": "BROWSER=none react-scripts - r @cypress/instrument-cra start",
 		"cypress:start:wait": "start-server-and-test cypress:start:app http://localhost:3000",
@@ -37,8 +37,7 @@
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build",
 		"storybook": "start-storybook -p 6006 -s public",
-		"build-storybook": "build-storybook -s public",
-		"build-rollup": "rollup -c"
+		"build-storybook": "build-storybook -s public"
 	},
 	"eslintConfig": {
 		"extends": [
