@@ -37,7 +37,7 @@ export const ToastContainer = forwardRef((props: IToastContainerProps, ref) => {
 	return (
 		<Portal>
 			<ErrorBoundary>
-				<ContainerForToasts position={settedPosition}>
+				<ContainerForToasts position={settedPosition} data-cy="toast-container">
 					{!!listOfToasts.length &&
 						listOfToasts.map((toast) => (
 							<Toast

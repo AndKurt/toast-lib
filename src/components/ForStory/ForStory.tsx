@@ -12,7 +12,9 @@ export const ForStory = (props: IToastContainerProps) => {
 		})
 	return (
 		<>
-			<AddBtn onClick={handleAddToast}>Add Toast</AddBtn>
+			<AddBtn onClick={handleAddToast} data-cy="add-toast-btn">
+				Add Toast
+			</AddBtn>
 			<ToastCreator {...props} />
 		</>
 	)

@@ -123,6 +123,7 @@ export const Toast = ({
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<ToastWrapper
+				data-cy="toast"
 				type={type}
 				position={position}
 				animation={anim}
@@ -133,7 +134,11 @@ export const Toast = ({
 					<Title>{title}</Title>
 					{description && <Description>{description}</Description>}
 				</TextHelper>
-				<CloseBtn type={type} onClick={handleDeleteToast} />
+				<CloseBtn
+					type={type}
+					data-cy="toast-close-btn"
+					onClick={handleDeleteToast}
+				/>
 			</ToastWrapper>
 		</ThemeProvider>
 	)
