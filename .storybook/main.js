@@ -23,8 +23,7 @@ module.exports = {
 			__dirname,
 			'../src/constants'
 		)
-		config.resolve.alias['@logic'] = path.resolve(__dirname, '../src/logic')
-		config.resolve.alias['@mock'] = path.resolve(__dirname, '../src/mock')
+		config.resolve.alias['@hooks'] = path.resolve(__dirname, '../src/hooks')
 		config.resolve.alias['@styles'] = path.resolve(__dirname, '../src/styles')
 		config.resolve.alias['@utils'] = path.resolve(__dirname, '../src/utils')
 		config.resolve.alias['@interfaces'] = path.resolve(

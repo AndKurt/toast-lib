@@ -6,10 +6,7 @@
 			"@assets/*": ["src/assets/*"],
 			"@components/*": ["src/components/*"],
 			"@constants/*": ["src/constants/*"],
-			"@containers/*": ["src/containers/*"],
-			"@logic/*": ["src/logic/*"],
-			"@mock/*": ["src/mock/*"],
-			"@screens/*": ["src/screens/*"],
+			"@hooks/*": ["src/hooks/*"],
 			"@styles/*": ["src/styles/*"],
 			"@utils/*": ["src/utils/*"],
 			"@interfaces/*": ["src/interfaces/*"]

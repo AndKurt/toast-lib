@@ -8,7 +8,7 @@ describe('Tests for check position', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=position:LEFT_TOP'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast-container]')
 			.should('have.css', 'position', 'fixed')
 			.should('have.css', 'left', '20px')
@@ -19,7 +19,7 @@ describe('Tests for check position', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=position:LEFT_BOTTOM'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast-container]')
 			.should('have.css', 'position', 'fixed')
 			.should('have.css', 'left', '20px')
@@ -30,7 +30,7 @@ describe('Tests for check position', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=position:RIGHT_TOP'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast-container]')
 			.should('have.css', 'position', 'fixed')
 			.should('have.css', 'right', '20px')
@@ -40,7 +40,7 @@ describe('Tests for check position', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=position:RIGHT_BOTTOM'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast-container]')
 			.should('have.css', 'position', 'fixed')
 			.should('have.css', 'right', '20px')

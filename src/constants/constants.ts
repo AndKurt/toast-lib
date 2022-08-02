@@ -2,7 +2,7 @@
 export const INFO = 'info'
 export const WARNING = 'warning'
 export const ERROR = 'error'
-export const SUCCSESS = 'success'
+export const SUCCESS = 'success'
 
 //Type of Base position
 export const LEFT_TOP = 'LEFT_TOP'

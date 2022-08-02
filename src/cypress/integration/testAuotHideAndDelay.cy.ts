@@ -8,7 +8,7 @@ describe('Tests auto delete toast and check delay', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=autoDelete:false'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast]').should('have.length', 1)
 		cy.wait(3000)
 		cy.get('[data-cy=toast]').should('have.length', 1)
@@ -18,7 +18,7 @@ describe('Tests auto delete toast and check delay', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=autoDelete:true'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast]').should('have.length', 1)
 		cy.wait(3000)
 		cy.get('[data-cy=toast]').should('have.length', 0)
@@ -28,7 +28,7 @@ describe('Tests auto delete toast and check delay', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=delayForDelete:4000'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast]').should('have.length', 1)
 		cy.wait(3000)
 		cy.get('[data-cy=toast]').should('have.length', 1)

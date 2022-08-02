@@ -11,20 +11,20 @@ import {
 	LEFT_TOP,
 	RIGHT_BOTTOM,
 	RIGHT_TOP,
-	SUCCSESS,
+	SUCCESS,
 	WARNING,
 } from '@/constants'
-import { ForStory } from '@/components/ForStory'
+import { ToastFactory } from '@/components/ToastFactory'
 
-const Template: ComponentStory<typeof ForStory> = (args) => (
-	<ForStory {...args} />
+const Template: ComponentStory<typeof ToastFactory> = (args) => (
+	<ToastFactory {...args} />
 )
 
 export const ToastCreatorTemplate = Template.bind({})
 
 export default {
 	title: 'ToastCreator',
-	component: ForStory,
+	component: ToastFactory,
 
 	argTypes: {
 		position: {
@@ -49,9 +49,9 @@ export default {
 
 		id: { label: { control: 'text' }, defaultValue: '1' },
 
-		title: { label: { control: 'text' }, defaultValue: 'Title' },
+		title: { label: { control: 'text' } },
 
-		description: { label: { control: 'text' }, defaultValue: 'Description' },
+		description: { label: { control: 'text' } },
 
 		type: {
 			table: {
@@ -60,7 +60,7 @@ export default {
 				},
 			},
 			control: 'inline-radio',
-			options: [ERROR, WARNING, INFO, SUCCSESS],
+			options: [ERROR, WARNING, INFO, SUCCESS],
 		},
 
 		autoDelete: {
@@ -73,4 +73,4 @@ export default {
 			control: { type: 'number', min: 3000, step: 100 },
 		},
 	},
-} as ComponentMeta<typeof ForStory>
+} as ComponentMeta<typeof ToastFactory>

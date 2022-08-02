@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { ToastContainer } from '@components/ToastContainer'
-import { instanceToast } from '@logic/ToastManager'
-import { IRefForceUpdate, IToastContainerProps } from '@interfaces/forToast'
+import { IRefForceUpdate, IToastContainerProps } from '@/interfaces'
+import { instanceToast } from './utils'
 
 export const ToastCreator = (props: IToastContainerProps) => {
 	const toastsRef = useRef<IRefForceUpdate>()

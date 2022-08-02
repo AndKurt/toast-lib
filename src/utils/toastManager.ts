@@ -1,6 +1,4 @@
-import { DEFAULT_DELAY } from '@constants/constants'
-import { IRefForceUpdate, IToast } from '@interfaces/forToast'
-import { toastsList } from '@mock/toasts'
+import { IRefForceUpdate, IToast } from '@/interfaces'
 import { v4 as uuid } from 'uuid'
 
 export class ToastManager {
@@ -9,7 +7,6 @@ export class ToastManager {
 	refForceUpdate: IRefForceUpdate
 
 	private constructor() {
-		//this.toastsList = [toastsList] //todo change to []
 		this.toastsList = []
 		this.refForceUpdate = { handleForceUpdate() {} }
 	}

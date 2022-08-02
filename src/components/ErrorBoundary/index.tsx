@@ -1,5 +1,5 @@
 import React, { Component, ErrorInfo } from 'react'
-import { ErrorMessage } from './componets'
+import { ErrorMessage } from './styled'
 
 interface IErrorBoundaryProps {
 	children?: JSX.Element

@@ -1,15 +1,11 @@
 import HelveticaNeue from '@assets/fonts/HelveticaNeue.ttf'
-import styled, { keyframes } from 'styled-components/macro'
+import styled from 'styled-components/macro'
 import {
 	font,
 	fromBottom,
 	fromLeft,
 	fromRight,
 	fromTop,
-	leftBottom,
-	leftTop,
-	rightBottom,
-	rightTop,
 	toBottom,
 	toLeft,
 	toRight,
@@ -21,20 +17,7 @@ import success from '@assets/svg/success.svg'
 import warning from '@assets/svg/warning.svg'
 import closeWhite from '@assets/svg/closeWhite.svg'
 import closeBlack from '@assets/svg/closeBlack.svg'
-import {
-	DEFAULT_ANIM_DELAY,
-	ERROR,
-	FROM_BOTTOM,
-	FROM_LEFT,
-	FROM_RIGHT,
-	FROM_TOP,
-	INFO,
-	LEFT_BOTTOM,
-	LEFT_TOP,
-	RIGHT_BOTTOM,
-	RIGHT_TOP,
-	WARNING,
-} from '@constants/constants'
+import { DEFAULT_ANIM_DELAY, ERROR, INFO, WARNING } from '@constants/constants'
 
 interface IProps {
 	type: string
@@ -65,19 +48,18 @@ export const ToastWrapper = styled.div<IToastContainer>`
 	transition: transform ${DEFAULT_ANIM_DELAY}ms ease-in;
 	cursor: grab;
 	user-select: none;
-
 	${font}
-
-	background: ${(props) => {
-		switch (props.type) {
+	font-size: ${({ theme }) => theme.fontSize.medium};
+	background: ${({ type, theme }) => {
+		switch (type) {
 			case INFO:
-				return props.theme.type.info
+				return theme.type.info
 			case WARNING:
-				return props.theme.type.warning
+				return theme.type.warning
 			case ERROR:
-				return props.theme.type.error
+				return theme.type.error
 			default:
-				return props.theme.type.success
+				return theme.type.success
 		}
 	}};
 	animation: ${({ animation }) => animation} 1s;
@@ -94,8 +76,8 @@ export const ToastWrapper = styled.div<IToastContainer>`
 export const Logo = styled.div<IProps>`
 	height: 64px;
 	width: 64px;
-	${(props) => {
-		switch (props.type) {
+	${({ type }) => {
+		switch (type) {
 			case INFO:
 				return `background-image: url(${info})`
 			case WARNING:
@@ -113,14 +95,12 @@ export const TextHelper = styled.div<IProps>`
 	margin-left: 38px;
 	width: 400px;
 	height: auto;
-	color: ${(props) =>
-		props.type === WARNING
-			? props.theme.textColor.black
-			: props.theme.textColor.white};
+	color: ${({ theme, type }) =>
+		type === WARNING ? theme.textColor.black : theme.textColor.white};
 `
 
 export const Title = styled.h2`
-	font-size: 50px;
+	font-size: ${({ theme }) => theme.fontSize.large};
 	line-height: 60px;
 	margin: 0;
 `
@@ -135,8 +115,8 @@ export const CloseBtn = styled.div<IProps>`
 	width: 32px;
 	right: 29px;
 	top: 27px;
-	${(props) =>
-		props.type === WARNING
+	${({ type }) =>
+		type === WARNING
 			? `background-image: url(${closeBlack});`
 			: `background-image: url(${closeWhite});`}
 	cursor: pointer;

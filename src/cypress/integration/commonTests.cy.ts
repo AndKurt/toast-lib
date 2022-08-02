@@ -7,27 +7,19 @@ describe('Common tests', () => {
 		)
 	})
 
-	it('Should contain "Add toast" button', () => {
-		cy.get('[data-cy=add-toast-btn]').should('be.visible')
-	})
-
-	it('Should display toast with default params', () => {
-		cy.get('[data-cy=add-toast-btn]').click()
-		cy.get('[data-cy=toast-container]').should('have.length', 1)
-		cy.get('[data-cy=toast]')
-			.should('have.length', 1)
-			.should('have.css', 'background-color', 'rgb(226, 88, 55)')
-		cy.get('[data-cy=toast-close-btn]')
-			.should('be.visible')
-			.should('have.length', 1)
+	it('Should contain "Add toast" buttons', () => {
+		cy.get('[data-cy=add-error-toast-btn]').should('be.visible')
+		cy.get('[data-cy=add-info-toast-btn]').should('be.visible')
+		cy.get('[data-cy=add-success-toast-btn]').should('be.visible')
+		cy.get('[data-cy=add-warning-toast-btn]').should('be.visible')
 	})
 
 	it('Should display only 3 toast after more than 3 click and disappeat after 3 seconds', () => {
-		cy.get('[data-cy=add-toast-btn]').click()
-		cy.get('[data-cy=add-toast-btn]').click()
-		cy.get('[data-cy=add-toast-btn]').click()
-		cy.get('[data-cy=add-toast-btn]').click()
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast-container]').should('have.length', 1)
 		cy.get('[data-cy=toast]').should('have.length', 3)
 		cy.wait(3000)

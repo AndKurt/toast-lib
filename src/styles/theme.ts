@@ -4,7 +4,6 @@ import { css, DefaultTheme } from 'styled-components'
 export const font = css`
 	font-family: 'Helvetica Neue';
 	font-weight: bold;
-	font-size: 32px;
 	line-height: 38px;
 `
 
@@ -122,6 +121,11 @@ const yellow = '#F4E048'
 const red = '#E25837'
 const green = '#37E29A'
 
+// Font sizes
+const small = '15px'
+const medium = '32px'
+const large = '50px'
+
 // Default Theme
 export const defaultTheme: DefaultTheme = {
 	type: {
@@ -134,5 +138,11 @@ export const defaultTheme: DefaultTheme = {
 	textColor: {
 		white: white,
 		black: black,
+	},
+
+	fontSize: {
+		small: small,
+		medium: medium,
+		large: large,
 	},
 }

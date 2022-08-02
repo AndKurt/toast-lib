@@ -8,7 +8,7 @@ describe('Tests for check types of toasts', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=type:error'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-error-toast-btn]').click()
 		cy.get('[data-cy=toast]').should(
 			'have.css',
 			'background-color',
@@ -20,7 +20,7 @@ describe('Tests for check types of toasts', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=type:warning'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-warning-toast-btn]').click()
 		cy.get('[data-cy=toast]').should(
 			'have.css',
 			'background-color',
@@ -32,7 +32,7 @@ describe('Tests for check types of toasts', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=type:info'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-info-toast-btn]').click()
 		cy.get('[data-cy=toast]').should(
 			'have.css',
 			'background-color',
@@ -44,7 +44,7 @@ describe('Tests for check types of toasts', () => {
 		cy.visit(
 			'/iframe.html?viewMode=story&id=toastcreator--toast-creator-template&args=type:success'
 		)
-		cy.get('[data-cy=add-toast-btn]').click()
+		cy.get('[data-cy=add-success-toast-btn]').click()
 		cy.get('[data-cy=toast]').should(
 			'have.css',
 			'background-color',
