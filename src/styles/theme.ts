@@ -139,7 +139,7 @@ export const defaultTheme: DefaultTheme = {
 		white: white,
 		black: black,
 	},
-
+	spaces: [0, 5, 10, 16, 38, 64, 128, 158, 256],
 	fontSize: {
 		small: small,
 		medium: medium,

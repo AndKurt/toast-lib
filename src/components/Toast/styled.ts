@@ -38,17 +38,17 @@ export const ToastWrapper = styled.div<IToastContainer>`
 	position: relative;
 	display: flex;
 	align-items: center;
-	margin-bottom: 10px;
 	width: 668px;
 	height: 181px;
 	border-radius: 24px;
 	box-shadow: 4px 4px 8px #00000029;
 	opacity: 1;
-	padding: 32px;
-	transition: transform ${DEFAULT_ANIM_DELAY}ms ease-in;
 	cursor: grab;
 	user-select: none;
 	${font}
+	margin-bottom: ${({ theme }) => theme.spaces[2]}px;
+	padding: ${({ theme }) => theme.spaces[1]}px;
+	transition: transform ${DEFAULT_ANIM_DELAY}ms ease-in;
 	font-size: ${({ theme }) => theme.fontSize.medium};
 	background: ${({ type, theme }) => {
 		switch (type) {
@@ -92,21 +92,21 @@ export const Logo = styled.div<IProps>`
 `
 
 export const TextHelper = styled.div<IProps>`
-	margin-left: 38px;
 	width: 400px;
 	height: auto;
+	margin-left: ${({ theme }) => theme.spaces[5]}px;
 	color: ${({ theme, type }) =>
 		type === WARNING ? theme.textColor.black : theme.textColor.white};
 `
 
 export const Title = styled.h2`
 	font-size: ${({ theme }) => theme.fontSize.large};
+	margin: ${({ theme }) => theme.spaces[0]}px;
 	line-height: 60px;
-	margin: 0;
 `
 
 export const Description = styled.p`
-	margin: 0;
+	margin: ${({ theme }) => theme.spaces[0]}px;
 `
 
 export const CloseBtn = styled.div<IProps>`

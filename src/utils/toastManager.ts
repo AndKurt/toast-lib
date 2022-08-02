@@ -4,11 +4,11 @@ import { v4 as uuid } from 'uuid'
 export class ToastManager {
 	private static instance: ToastManager
 	toastsList: IToast[]
-	refForceUpdate: IRefForceUpdate
+	refForceUpdate: IRefForceUpdate | null
 
 	private constructor() {
 		this.toastsList = []
-		this.refForceUpdate = { handleForceUpdate() {} }
+		this.refForceUpdate = null
 	}
 
 	public static getInstance(): ToastManager {
@@ -40,7 +40,7 @@ export class ToastManager {
 		this.refForceUpdate?.handleForceUpdate()
 	}
 
-	deleteToastWithDelay = (id: string, delayForDelete) => {
+	deleteToastWithDelay = (id: string, delayForDelete: number) => {
 		return setTimeout(() => this.deleteToast(id), delayForDelete)
 	}
 

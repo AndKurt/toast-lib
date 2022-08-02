@@ -16,7 +16,7 @@ declare module 'styled-components' {
 			white: string
 			black: string
 		}
-
+		spaces: number[]
 		fontSize: {
 			small: string
 			medium: string

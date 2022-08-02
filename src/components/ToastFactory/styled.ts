@@ -21,8 +21,8 @@ export const CreateToastBtn = styled.button<IProps>`
 				return theme.type.success
 		}
 	}};
-	padding: 5px;
-	margin: 0 5px;
+	padding: ${({ theme }) => theme.spaces[1]}px;
+	margin: 0 ${({ theme }) => theme.spaces[1]}px;
 	color: ${({ theme }) => theme.textColor.white};
 	font-size: ${({ theme }) => theme.fontSize.small};
 	font-weight: bold;

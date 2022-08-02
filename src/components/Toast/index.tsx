@@ -22,12 +22,12 @@ export const Toast = ({
 	type,
 	title,
 	description,
-	animation,
+	animation: propsAnimation,
 	autoDelete = false,
 	delayForDelete = DEFAULT_DELAY,
 	position,
 }: ICreateToast) => {
-	const [anim, setAnim] = useState<TAnimation>(animation)
+	const [animation, setAnimation] = useState<TAnimation>(propsAnimation)
 	let positionX: number
 	let positionY: number
 
@@ -38,7 +38,7 @@ export const Toast = ({
 				delayForDelete
 			)
 			const changeAnimId = setTimeout(
-				() => setAnim(changeAnimationDirection(anim)),
+				() => setAnimation(changeAnimationDirection(animation)),
 				delayForDelete - DEFAULT_ANIM_DELAY
 			)
 			return () => {
@@ -49,7 +49,7 @@ export const Toast = ({
 	}, [])
 
 	const handleDeleteToast = () => {
-		setAnim(changeAnimationDirection(anim))
+		setAnimation(changeAnimationDirection(animation))
 		setTimeout(() => {
 			instanceToast.deleteToast(id as string)
 		}, DEFAULT_ANIM_DELAY)
@@ -80,7 +80,7 @@ export const Toast = ({
 			data-cy="toast"
 			type={type}
 			position={position}
-			animation={anim}
+			animation={animation}
 			onMouseUp={handleMouseUp}
 			onMouseDown={handleMouseDown}>
 			<Logo type={type} />
