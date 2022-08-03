@@ -47,7 +47,7 @@ export default {
 			options: [FROM_LEFT, FROM_BOTTOM, FROM_TOP, FROM_RIGHT],
 		},
 
-		id: { label: { control: 'text' }, defaultValue: '1' },
+		id: { label: { control: 'text' } },
 
 		title: { label: { control: 'text' } },
 

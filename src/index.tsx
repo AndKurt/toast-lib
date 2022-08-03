@@ -14,3 +14,6 @@ export const ToastCreator = (props: IToastContainerProps) => {
 
 	return <ToastContainer ref={toastsRef} {...props} />
 }
+
+export { useToastManager } from '@/hooks'
+export { instanceToast } from '@utils/toastManager'

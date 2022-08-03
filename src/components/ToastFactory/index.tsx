@@ -1,6 +1,6 @@
 import { ERROR, INFO, SUCCESS, WARNING } from '@/constants/constants'
 import { useToastManager } from '@/hooks'
-import { ToastCreator } from '@/index'
+import { instanceToast, ToastCreator } from '@/index'
 import { IToastContainerProps } from '@/interfaces'
 import { defaultTheme } from '@/styles/theme'
 import { ThemeProvider } from 'styled-components'
@@ -8,39 +8,18 @@ import { CreateToastBtn } from './styled'
 
 export const ToastFactory = (props: IToastContainerProps) => {
 	const { info, success, error, warning } = useToastManager()
-	const { title, description, autoDelete, delayForDelete } = props
 
 	const handleAddInfoToast = () => {
-		info({
-			title: title ? title : 'Info',
-			description: description,
-			autoDelete: autoDelete,
-			delayForDelete: delayForDelete,
-		})
+		info({ title: 'Info', ...props })
 	}
 	const handleAddErrorToast = () => {
-		error({
-			title: title ? title : 'Error',
-			description: description,
-			autoDelete: autoDelete,
-			delayForDelete: delayForDelete,
-		})
+		error({ title: 'Error', ...props })
 	}
 	const handleAddSuccessToast = () => {
-		success({
-			title: title ? title : 'Success',
-			description: description,
-			autoDelete: autoDelete,
-			delayForDelete: delayForDelete,
-		})
+		success({ title: 'Success', ...props })
 	}
 	const handleAddWarningToast = () => {
-		warning({
-			title: title ? title : 'Warning',
-			description: description,
-			autoDelete: autoDelete,
-			delayForDelete: delayForDelete,
-		})
+		warning({ title: 'Warning', ...props })
 	}
 
 	const buttonsArr = [

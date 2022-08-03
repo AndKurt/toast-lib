@@ -1,23 +1,27 @@
 {
-  "extends": "./tsconfig.path.json",
-  "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "noImplicitAny": false,
-    "types": ["cypress"]
-  },
-  "include": ["src", "declaration.d.ts", "styled.d.ts"]
+	"extends": "./tsconfig.path.json",
+	"compilerOptions": {
+		"target": "es5",
+		"outDir": "lib",
+		"lib": ["dom", "dom.iterable", "esnext"],
+		"declaration": true,
+		"declarationDir": "lib",
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"strict": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		"noImplicitAny": false,
+		"types": ["cypress"]
+	},
+	"include": ["src", "declaration.d.ts", "styled.d.ts"],
+	"exclude": ["node_modules", "lib"]
 }

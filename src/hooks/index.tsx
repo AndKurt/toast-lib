@@ -5,19 +5,8 @@ import { useCallback } from 'react'
 
 const showToastFactory =
 	(type: TError) =>
-	({
-		title = 'Default title',
-		description,
-		autoDelete,
-		delayForDelete,
-	}: IToastContainerProps) => {
-		instanceToast.generateToast({
-			title,
-			description,
-			type,
-			autoDelete,
-			delayForDelete,
-		})
+	({ title = 'Default title', ...props }: IToastContainerProps) => {
+		instanceToast.generateToast({ title, type, ...props })
 	}
 
 export const useToastManager = () => {
